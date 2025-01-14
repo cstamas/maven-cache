@@ -8,14 +8,29 @@
         <groupId>org.apache.maven.samples</groupId>
         <artifactId>the-parent</artifactId>
         <version>1.0</version>
+        <relativePath />
     </parent>
 
     <artifactId>child-b</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+        </dependency>
+    </dependencies>
+
     <repositories>
         <repository>
             <id>repo-b</id>
-            <url>${project.basedir}/../repo-b</url>
+            <url>file:/home/cstamas/tmp/maven-cache/repo-b</url>
+            <releases>
+                <enabled>true</enabled>
+                <checksumPolicy>ignore</checksumPolicy>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
         </repository>
     </repositories>
 </project>
